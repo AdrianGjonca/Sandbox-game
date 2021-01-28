@@ -20,4 +20,9 @@ public class Position {
 	public float[] get_pxl() {
 		return new float[] {x*16 , y*16};
 	}
+	
+	public void move(float x, float y) {
+		this.x += x;
+		this.y += y;
+	}
 }

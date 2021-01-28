@@ -21,7 +21,7 @@ public class FrameMan {
 	public static void init() {
 		win = new JFrame("Game");
 		pan = new JPanel();
-		win.setSize(800, 600);
+		win.setSize(_SCREENX, _SCREENY);
 		pan.setBackground(Color.black);
 		win.add(pan);
 		win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

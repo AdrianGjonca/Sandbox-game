@@ -10,7 +10,7 @@ import sandboxgame.render.Drawable;
 public class GameMan {
 	
 	static Graphics2D g;
-	static GameObject camera;
+	public static GameObject camera;
 	public static void init(Graphics2D g, GameObject camera) {
 		GameMan.g = g;
 		GameMan.camera = camera;
@@ -27,5 +27,9 @@ public class GameMan {
 		final float[] center = {camera.position.get()[0] + camera.center[0], camera.position.get()[1] + camera.center[1]};
 		DrawMan.camera(center);
 		DrawMan.draw(new Drawable(camera.position.get_pxl(), img));
+	}
+	
+	public static void pass_obj(GameObject object, BufferedImage todraw) {
+		DrawMan.draw(new Drawable(object.position.get_pxl(), todraw));
 	}
 }
