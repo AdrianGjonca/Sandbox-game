@@ -3,7 +3,13 @@ package sandboxgame;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("This project begins");
+		FrameMan.init();
+		while(true) {
+			FrameMan.frame();
+			FrameLog.cap(512);
+			FrameLog.next();
+			System.out.println(FrameLog.fps());
+		}
 	}
 
 }
