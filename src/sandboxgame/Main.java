@@ -1,24 +1,19 @@
 package sandboxgame;
 
-import java.awt.image.BufferedImage;
-
-import sandboxgame.render.DrawMan;
-import sandboxgame.render.Drawable;
+import sandboxgame.game.GameMan;
+import sandboxgame.game.GameObject;
+import sandboxgame.game.Position;
 
 public class Main {
 
 	public static void main(String[] args) {
-		BufferedImage img = new BufferedImage(10,10,BufferedImage.TYPE_INT_RGB);
-		img.setRGB(0, 0, 0xFFFFFF);
-		img.setRGB(1, 1, 0xFFFFFF);
-		img.setRGB(2, 2, 0xFFFFFF);
-		
-		Drawable obj = new Drawable(new float[] {0,0},img);
-		
 		FrameMan.init();
-		DrawMan.init(FrameMan.getGraphics());
+		GameObject o = new GameObject(null, new Position(0,0), new float[] {8,8});
+		
+		GameMan.init(FrameMan.getGraphics(), o);
 		while(true) {
-			DrawMan.draw(obj);
+			GameMan.frame();
+			FrameMan.getGraphics().drawLine(400, 300, 410, 300);
 			FrameMan.frame();
 			FrameLog.cap(512);
 			FrameLog.next();
