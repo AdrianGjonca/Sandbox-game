@@ -8,6 +8,10 @@ import java.awt.image.BufferedImage;
 import javax.swing.*;
 
 public class FrameMan {
+	//Move to const
+	public static final int _SCREENX = 800;
+	public static final int _SCREENY = 600;
+	
 	static JFrame win;
 	static JPanel pan;
 	static BufferedImage img;
@@ -23,7 +27,7 @@ public class FrameMan {
 		win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		win.setVisible(true);
-		img = new BufferedImage(800,600,BufferedImage.TYPE_INT_RGB);
+		img = new BufferedImage(_SCREENX,_SCREENY,BufferedImage.TYPE_INT_RGB);
 		g_pan = pan.getGraphics();
 		g_img = img.createGraphics();
 	}
